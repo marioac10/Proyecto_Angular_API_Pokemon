@@ -1,0 +1,56 @@
+<div>
+    <h1>Registro-Pokémon</h1>
+</div>
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="mt-5">
+    <div class="row">
+        <div class="col-sm-6">
+            <label for="lblnombre">Nombre</label>
+            <input class="form-control" type="text" name="nombre" 
+            aria-describedby="validationName"
+            placeholder="Nombre"
+            formControlName="nombre"
+            required
+            [ngClass]="{'is-invalid': submit && f['nombre'].errors, 'is-valid': f['nombre'].touched && !f['nombre'].errors}"
+            >
+            <div *ngIf="submit && f['nombre'].errors" class="invalid-feedback">
+                <!-- Please provide a valid name. -->
+                <div id="validationName" 
+                *ngIf="f['nombre'].errors?.['required']" 
+                >
+                    Please provide a valid name.
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <label for="lblnombre">Nivel</label>
+            <input class="form-control" type="text" name="Nivel"
+            formControlName="nivel" 
+            placeholder="Nivel"
+            aria-describedby="validationNivel"
+            [ngClass]="{'is-invalid':submit && f['nivel'].errors, 'is-valid': f['nivel'].touched && !f['nivel'].errors}"
+            >
+            <div *ngIf="submit && f['nivel'].errors" class="invalid-feedback">
+                <div id="validationNivel" *ngIf="f['nivel'].errors?.['required']">
+                    Please provide a valid level.
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <label for="lblnombre">Especie</label>
+            <input class="form-control" type="text" name="especie"
+            formControlName="especie"
+            placeholder="Especie"
+            [ngClass]="{'is-invalid': submit && f['especie'].errors, 'is-valid': f['especie'].touched && !f['especie'].errors}">
+            <div *ngIf="submit && f['especie'].errors" class="invalid-feedback">
+                <div *ngIf="f['especie'].errors?.['required']">
+                    Please provide a valid species.
+                </div>
+            </div>
+        </div>
+        
+    
+    </div>    
+    <div class="row justify-content-end">
+        <button type="submit" class="btn btn-success col-md-2 ">Crear</button>
+    </div>
+</form>

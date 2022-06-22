@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "pokemon-list.component.sass"
+    ],
+    "names": [],
+    "file": "pokemon-list.component.css"
+}

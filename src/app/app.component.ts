@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularApi';
+  result:number=0;
+  a:number = 0;
+  b:number = 0;
+  public Sumar(){
+    this.result = this.a + this.b;
+    alert(this.result);
+  }
 }
